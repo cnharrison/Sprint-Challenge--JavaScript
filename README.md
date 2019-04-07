@@ -30,13 +30,36 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. Describe the biggest difference between `.forEach` & `.map`.
 
+    .forEach iterates through an array and executes a function once for each element. 
+    .map creates an entirely new array. each element in this new array is the result of iterating through the given array and executing a function once for each element in the given array
+
 2. What is the difference between a function and a method?
+
+    a function is simply a resuable block of code that executes a given task. 
+    methods are a subset of functions. they are simply function that are defined as properties of an object!
 
 3. What is closure?
 
+    closure means that if a variable is defined inside a function, it can only be accessed from inside that function. this means that variables declared inside nested functions cascade up to their parent functions as well. 
+
 4. Describe the four rules of the 'this' keyword.
 
+    new binding - we've bult a constructor function. it takes in parameters and expresses those parameters as methods of the this keyword. 
+    when this constructor function is invoked with the new keyword, the this keyword inside that function is bound to a new object that we have just constructed. 
+
+    explicit binding - we want to take a function containing the this keyword in the global scope and call it in the context of our object. 
+    when we run the function, we use .call. 
+    we pass in the name of the object as the first parameter of our function. 
+    we can use .apply to pass in an array and have its elements be automatically broken out into subsequent parameters. 
+    .bind is going to do the same thing as call but its going to return a new function that we can call later but still keep the context of the object that we have passed in as the first parameter 
+
+    implicit binding - this references whatever is to the left of the dot when the function is invoked
+
+    window binding  - if this is within the scope of a function, the this keyword returns undefined. if the this keyword is in the global scope, it returns the window object, which is an epic object with every possible piece of information about the browser environment. if we use strict mode doing either of these actually returns an error 
+
 5. Why do we need super() in an extended class?
+
+    super() just calls the parent's constructor function. this allows the class we are creating to inherit its parents properties. 
 
 ## Project Set up
 
@@ -85,3 +108,5 @@ In your solutions, it is essential that you follow best practices and produce cl
 ## Stretch Problems
 
 There are a few stretch problems found throughout the files, don't work on them until you are finished with MVP requirements!
+
+Initial commit
